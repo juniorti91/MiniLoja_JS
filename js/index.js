@@ -2,19 +2,19 @@ const items = [
     {
         id: 0,
         nome: 'camiseta',
-        img: '/image/produto-teste.png',
+        img: '/image/docinho.png',
         quantidade: 0
     },
     {
         id: 1,
         nome: 'short',
-        img: '/image/produto-teste.png',
+        img: '/image/docinho.png',
         quantidade: 0
     },
     {
         id: 2,
         nome: 'sapato',
-        img: '/image/produto-teste.png',
+        img: '/image/docinho.png',
         quantidade: 0
     }
 ]
@@ -29,7 +29,6 @@ inicializarLoja = () => {
                 <p>`+val.nome+`</p>
                 <a key="`+val.id+`" href="#">Adicionar ao carrinho!</a>
             </div>
-
         `;
     })
 }
@@ -37,7 +36,20 @@ inicializarLoja = () => {
 inicializarLoja();
 
 atualizarCarrinho = () => {
-    console.log(items);
+    var containerCarrinho = document.getElementById('carrinho');
+    containerCarrinho.innerHTML = "";
+    items.map((val)=>{
+        if(val.quantidade > 0){
+        containerCarrinho.innerHTML += `
+            <div class="info-single-checkout">
+                <p style="float-left;">Produto: `+val.nome+`</p>
+                <p style=float-right;Quantidade: `+val.quantidade+`</p>
+                <div style="clear:both"></div>
+                <hr>
+            </div>
+        `;
+        }
+    })
 }
 
 var links = document.getElementsByTagName('a');
