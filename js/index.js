@@ -42,10 +42,9 @@ atualizarCarrinho = () => {
         if(val.quantidade > 0){
         containerCarrinho.innerHTML += `
             <div class="info-single-checkout">
-                <p style="float-left;">Produto: `+val.nome+`</p>
-                <p style=float-right;Quantidade: `+val.quantidade+`</p>
+                <p style="float:left;"> Produto: `+val.nome+`</p>
+                <p style="float:right;"> Quantidade: `+val.quantidade+`</p>
                 <div style="clear:both"></div>
-                <hr>
             </div>
         `;
         }
